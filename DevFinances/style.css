@@ -1,0 +1,137 @@
+:root{
+    --dark_blue: #363f5f;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(241, 241, 241);
+    font-family: 'Poppins', sans-serif;
+}
+
+.container{
+    width: 60%;
+    height: 50%px; 
+    
+
+    margin: auto;
+}
+
+header{
+    background-color: #2D4A22;
+    padding: 2rem 0 10rem ;
+    text-align: center;
+}
+
+#logo{
+    color:white;
+    font-weight: 100;
+}
+
+#balance{
+    margin-top: -11rem;
+    
+}
+
+
+#balance h2{
+    color: white;
+    font-weight: 400;
+}
+
+h2{
+    margin-top: 3.2rem;
+    margin-bottom: 0.8rem;
+    color: var(--dark_blue); 
+    /*Executando uma função com cor setada na variável
+    dark_blue  */
+}   
+
+.card{
+    background-color: white;
+    padding: 1.5rem 2rem;
+    border-radius: 0.25rem;
+    margin: 2rem;
+    color: var(--dark_blue);
+}
+
+.card h3{
+    font-weight: normal;
+    font-size: 1rem;
+}
+
+.card p{
+    font-size: 2rem;
+    line-height: 3rem;
+    margin-top: 1rem;
+}
+
+.card.total{
+    background: #49AA26;
+    color: white;
+}
+
+#data-table{
+    width: 100%;
+    border-spacing:0 0.5rem;
+}
+
+table tbody tr{
+    opacity: 0.7;
+}
+
+table tr:hover{
+opacity: 2;
+}
+
+table th{
+    background: rgba(255, 255, 255, 0.822);
+    font-weight: normal;
+    text-align: left;
+    padding: 1rem 2rem;
+    color: #969cb3;
+}
+
+table thead tr th:first-child{ /* Serve para estilizar o primeiro td da tr*/
+    border-top-left-radius:  0.25rem; /*Ajustando borda esquerda superior*/
+    border-bottom-left-radius: 0.25rem;/*Ajustando borda esquerda inferior*/
+}
+table thead tr th:last-child{ /*Serve para pegar o ultimo th na tr*/
+    border-top-right-radius:  0.25rem; 
+    border-bottom-right-radius: 0.25rem;
+}
+
+table td{
+    background: white;
+    padding: 1rem 2rem; 
+}
+
+table tbody tr td:first-child{/*Serve para pegar o primeiro td na tr*/
+    border-top-left-radius:  0.25rem;
+    border-bottom-left-radius: 0.25rem;
+}
+table tbody tr td:last-child{/*Serve para pegar o ultimo td na tr*/
+    border-top-right-radius:  0.25rem;
+    border-bottom-right-radius: 0.25rem;
+}
+
+td.description{
+    color: var(--dark_blue);
+}
+td.income{
+    color: #12a454;
+}
+td.expense{
+    color:#e92929
+}
+
+footer{
+    text-align: center;
+    padding: 4rem 0 2rem;
+    color: var(--dark_blue);
+    opacity: 0.6;
+}
