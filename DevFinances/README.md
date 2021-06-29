@@ -10,9 +10,8 @@ Pag in creating...
 <p> - JS </p>
 
 # Ilustração
-<h1>
-  <img tittle="DevFinances" src="./imagens/Animação2.gif">
-</h1>
+
+  ![Animação2](https://user-images.githubusercontent.com/58434465/123861169-3c01ab80-d8fd-11eb-93f9-5175b4444ecc.gif)
 
 ## Autoria
 
