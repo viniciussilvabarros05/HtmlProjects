@@ -14,7 +14,7 @@ body{
     margin: -16px -16px 40px -16px ;
     color:  rgb(236, 228, 12);
     font-weight: 100;
-    font-size: 250%;
+    font-size: 450%;
     padding: 0.25rem;
     box-sizing: border-box;
 }
@@ -26,7 +26,8 @@ body{
     background-image: url(https://www.milium.com.br/wp-content/uploads/2020/10/Churrasco-temperado-Blog-Post-Milium-Out20-04.jpg);
     background-size: cover;
     padding: 1rem;
-    max-width: 300px;
+    max-width: 400px;
+    
     margin: auto;
 }
 
@@ -35,15 +36,18 @@ input{
     background-color: rgb(255, 255, 255);
     border-radius: 0.40rem;
     border: none;
-    width: 100%;
+    font-size: 20px;
+    width: 95%;
+    padding: 0.5rem;
     opacity: 0.8;
     display: block;
     margin-bottom: 5px;   
 }
 
 button{
+    padding: 0.5rem;
     border-radius: 0.40rem;
-    font-size: 10px; 
+    font-size: 15px; 
     margin-bottom: 10px;   
 }
 button:hover{
@@ -53,7 +57,7 @@ button:hover{
 #resultado{
     color: rgb(236, 228, 12);
     font-family: 'Odibee Sans', cursive;
-    font-size: 20px;
+    font-size: 40px;
     padding-left: 5px;
     border-radius: 0.40rem;
     font-weight: 500;
