@@ -16,21 +16,15 @@ body{
 .container{
     width: 60%;
     height: 50%px; 
-    
-
     margin: auto;
 }
 
 header{
     background-color: #2D4A22;
-    padding: 2rem 0 10rem ;
+    padding: 2rem 0 10rem;
     text-align: center;
 }
 
-#logo{
-    color:white;
-    font-weight: 100;
-}
 
 #balance{
     margin-top: -11rem;
@@ -52,16 +46,25 @@ h2{
 }   
 
 .card{
+    
     background-color: white;
     padding: 1.5rem 2rem;
     border-radius: 0.25rem;
-    margin: 2rem;
+    margin: 2rem 0 0 ;
     color: var(--dark_blue);
 }
 
 .card h3{
-    font-weight: normal;
+    display: flex; /*Para posicionar um elemento ao lado do outro*/
+    justify-content:space-between; /**/
+    align-items: center; /*Alinhar os elementos no eixo x*/
+    font-weight: normal; 
     font-size: 1rem;
+}
+
+.delete{
+    text-align: right;
+
 }
 
 .card p{
@@ -75,8 +78,22 @@ h2{
     color: white;
 }
 
+
+.link{
+    display: inline-block;
+    margin-bottom: 0.8rem;
+    text-decoration: none;
+    color: rgb(45, 194, 15);
+}
+
+.link:hover{
+    color: rgb(64, 252, 39);
+}
+
+
 #data-table{
-    width: 100%;
+    
+    width:100%;
     border-spacing:0 0.5rem;
 }
 
@@ -134,4 +151,27 @@ footer{
     padding: 4rem 0 2rem;
     color: var(--dark_blue);
     opacity: 0.6;
+}
+
+/* ========= RESPONSIVIDADE ========= */
+
+@media (min-width:800px) {
+
+    html{
+        font-size: 87.5%;
+    }
+
+    #balance{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2rem;
+    }
+}
+
+@media(max-width:637px){
+
+    #data-table{
+    display:block;
+    overflow-x:auto;
+    }
 }

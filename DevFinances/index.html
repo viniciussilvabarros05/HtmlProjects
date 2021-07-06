@@ -14,24 +14,35 @@
 
 <body>
     <header>
-        <h1 id="logo">dev.Finance$</h1>
+        <img src="./imagens/logo.svg" alt="icon">
     </header>
 
     <main class="container">
+        
         <section id="balance">
-            <div>
-                <h2>Balanço</h2>
-            </div>
+
             <div class="card">
-                <h3>Entradas</h3>
+                <h3> 
+                    <span>Entradas</span>
+                    <img src="./imagens/income.svg" alt="Image de Entradas">
+                </h3>
+               
                 <p>R$ 5.000,00</p>
             </div>
+
             <div class="card">
-                <h3>Saídas</h3>
+                <h3>
+                    <span>Saídas</span>
+                    <img src="./imagens/expense.svg">
+                </h3>
                 <p>R$ 3.000,00</p>
             </div>
+
             <div class="card total">
-                <h3>Total</h3>
+                <h3>
+                    <span>Total</span>
+                    <img src="./imagens/total.svg">
+                </h3>
                 <p>R$ 2.000,00</p>
             </div>
 
@@ -39,6 +50,7 @@
 
         <section id="transaction">
             <h2>Transações</h2>
+            <a class="link" href="#">+Novas Transações</a>
             <!-- Criando tabela -->
             <table id="data-table">
                 <!-- Cabeçalho da tabela -->
@@ -47,6 +59,7 @@
                         <th>Descrição </th>
                         <th>Valor</th>
                         <th>Data</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <!-- Corpo da tabela
@@ -57,16 +70,25 @@
                         <td class="description">Luz</td>
                         <td class="expense">- R$ 500,00</td>
                         <td class="date">23/01/2021</td>
+                        <td class="delete">
+                            <img src="./imagens/minus.svg"> 
+                        </td>
                     </tr>
                     <tr>
                         <td class="description">Criação de app</td>
                         <td class="income">R$ 5.000,00</td>
                         <td class="date">23/01/2021</td> 
+                        <td class="delete">
+                            <img src="./imagens/minus.svg"> 
+                        </td>
                     </tr>
                     <tr>
                         <td class="description">Internet</td>
                         <td class="expense">- R$ 149,00</td>
                         <td class="date">23/01/2021</td>
+                        <td class="delete">
+                            <img src="./imagens/minus.svg"> 
+                        </td>
                     </tr>
                 </tbody>
             </table>
