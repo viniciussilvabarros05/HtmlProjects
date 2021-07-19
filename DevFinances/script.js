@@ -11,30 +11,20 @@ const modal = {
 
 }
 
-const transactions = [
-    {
-        
-        description: "luz",
-        amount: -50000,
-        date: "19/01/2021",
-    },
-    {
-        
-        description: "app",
-        amount: 500000,
-        date: "19/01/2021",
-    },
-    {
-      
-        description: "Internet",
-        amount: -50000,
-        date: "19/01/2021",
+const Storage ={
+    get(){
+        return JSON.parse(localStorage.getItem("dev.finances:transactions")) || []
     },
 
-]
+    set(transactions){
+
+        localStorage.setItem("dev.finances:transactions", JSON.stringify(transactions))
+
+    }
+}
 
 const Transaction = {
-    all: transactions, /*Preparando o objeto para json */
+    all: Storage.get(), /*Preparando o objeto para json */
 
     add(transaction) { /*Criando método para guardar novas transações */
         Transaction.all.push(transaction)
@@ -76,7 +66,7 @@ const DOM = {
     transactionsContainer: document.querySelector("#data-table tbody"), /*Guardando o elemento tbody em uma variável*/
 
 
-    addTransaction(transaction, index) { /*Criando o elemento tr para ser incluido no tbody */
+    addTransaction(transaction, index) { /*Criando o elemento tr para ser incluido no tbody e posição na array*/
         const tr = document.createElement("tr")
         tr.innerHTML = DOM.innerHTMLTransaction(transaction, index)
         tr.dataset.index = index
@@ -84,15 +74,15 @@ const DOM = {
         DOM.transactionsContainer.appendChild(tr)
     },
 
-    innerHTMLTransaction(transactions, index) { /*Organizando estrutura para ser setada no html em tbody */
-        const CSSclass = transactions.amount > 0 ? "income" : "expense" /*modificando cor da entrada, ou saida de dinheiro */
-        const amount = Utils.formatCurrency(transactions.amount) /*Utilizando a formatação da moeda */
+    innerHTMLTransaction(transaction, index) { /*Organizando estrutura para ser setada no html em tbody */
+        const CSSclass = transaction.amount > 0 ? "income" : "expense" /*modificando cor da entrada, ou saida de dinheiro */
+        const amount = Utils.formatCurrency(transaction.amount) /*Utilizando a formatação da moeda */
         const html = `   
-         <td class="description">${transactions.description}</td>
+         <td class="description">${transaction.description}</td>
          <td class=${CSSclass}>${amount}</td>
-         <td class="date">${transactions.date}</td>
+         <td class="date">${transaction.date}</td>
          <td >
-            <img src="./imagens/minus.svg"> 
+            <img onclick = "Transaction.remove(${index})" src="./imagens/minus.svg"> 
          </td>
 
          `
@@ -190,7 +180,7 @@ const Form = {
             
             Transaction.add(transaction) // salvando dados do formulário
 
-            Form.clearFields() //limpando as informações
+            Form.clearFields() //limpando as informações do formulário
 
             modal.close() //fechando o modal
 
@@ -201,15 +191,18 @@ const Form = {
     }
 }
 
+
+
+
 const App = {
     init() {
 
-        Transaction.all.forEach(transaction => { /*   Estrutura de repetição para colocar todos os index do objeto transactions; forEach = Para todo elemento dentro da array*/
-
-            DOM.addTransaction(transaction)/*Adicionando  função para atualiazar valores */
+        Transaction.all.forEach((transaction, index) => { /*   Estrutura de repetição para colocar todos os index do objeto transactions; forEach = Para todo elemento dentro da array*/
+            DOM.addTransaction(transaction, index)/*Adicionando  função para atualiazar valores */
         })
         DOM.updateBalance()/*Formatando o valor monetário */
-
+        
+        Storage.set(Transaction.all) /*Setando dados no localStorage */
     },
 
     reload() {
@@ -220,4 +213,3 @@ const App = {
 
 App.init()
 
-console.log(Form.getValues())
