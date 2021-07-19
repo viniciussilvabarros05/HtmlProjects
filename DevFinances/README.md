@@ -11,7 +11,8 @@ Pag finished
 
 # Ilustração
 
-  ![Animação2](https://user-images.githubusercontent.com/58434465/123861169-3c01ab80-d8fd-11eb-93f9-5175b4444ecc.gif)
+![DeviFinances-final](https://user-images.githubusercontent.com/58434465/126232360-c6cde7ef-9a29-4e9c-a8d2-474d1c7f53e0.gif)
+
 
 ## Autoria
 
