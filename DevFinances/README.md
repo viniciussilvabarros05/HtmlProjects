@@ -3,7 +3,7 @@
 
 
 # Sobre
-Pag in finished
+Pag finished
 # Tecnologias
 <p>- HTML</p>
 <p>- CSS</p>
